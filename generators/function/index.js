@@ -1,4 +1,5 @@
 const Generator = require('yeoman-generator');
+const { fnName } = require('../../utils/string');
 
 module.exports = class extends Generator {
   async init() {
@@ -13,14 +14,14 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const { name } = this.answers;
+    const name = fnName(this.answers.name);
     this.fs.copyTpl(
-      this.templatePath('./function.ejs'),
+      this.templatePath('./function.ts.ejs'),
       this.destinationPath(`${process.cwd()}/${name}.ts`),
       { myFunc: name },
     );
     this.fs.copyTpl(
-      this.templatePath('./function.test.ejs'),
+      this.templatePath('./function.test.ts.ejs'),
       this.destinationPath(`${process.cwd()}/__tests__/${name}.test.ts`),
       { myFunc: name },
     );
