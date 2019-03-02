@@ -1,12 +1,12 @@
-import * as React from "react";
-import { shallow } from "enzyme";
-import { <%= myComp %> } from "../<%= myComp %>";
+import * as React from 'react';
+import { shallow } from 'enzyme';
+import { <%= myComp %> } from '../<%= myComp %>';
 
-describe("<%= myComp %>", () => {
-  it("renders myProp into a div", function() {
-    const myProp = "test";
-    const wrapper = shallow(<<%= myComp %> myProp={myProp} />);
+describe('<%= myComp %>', () => {
+    it('renders myProp into a div', () => {
+        const myProp = 'test';
+        const wrapper = shallow(<<%= myComp %> myProp={myProp} />);
 
-    expect(wrapper.find("div").text()).toEqual(myProp);
-  });
+        expect(wrapper.find('div').text()).toEqual(myProp);
+    });
 });

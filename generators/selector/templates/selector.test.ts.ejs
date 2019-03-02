@@ -1,0 +1,22 @@
+import {
+    <%=selectName%>,
+    <%=selectorName%>,
+} from '../<%=selectorName%>';
+
+const mockState = {
+    myProp: {
+        someObj: 'test',
+    },
+} as any as AppState;
+
+describe('<%=selectName%>', () => {
+    it('returns <%=selectName%> state', () => {
+        expect(<%=selectName%>(mockState)).toEqual(mockState.myProp);
+    });
+});
+
+describe('<%=selectorName%>', () => {
+    it('returns <%=selectorName%> state', () => {
+        expect(<%=selectorName%>(mockState)).toEqual(mockState.myProp);
+    });
+});

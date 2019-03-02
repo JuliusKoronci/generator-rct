@@ -1,0 +1,13 @@
+import { createSelector } from 'reselect';
+
+interface ReturnState {
+    someObj: string;
+}
+
+interface AppState {
+    myProp: ReturnState;
+}
+
+export const <%=selectName%> = (state: AppState): ReturnState => state.myProp;
+
+export const <%=selectorName%> = createSelector(<%=selectName%>, arg => arg);

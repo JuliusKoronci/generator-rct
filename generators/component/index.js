@@ -11,13 +11,24 @@ module.exports = class extends Generator {
         message: 'Component name',
         default: this.appname,
       },
+      {
+        type: 'list',
+        name: 'type',
+        message: 'What type of component?',
+        choices: [
+          'Class',
+          'SFC',
+          'Pure',
+        ],
+      },
     ]);
   }
 
   writing() {
     const name = lodash.upperFirst(fnName(this.answers.name));
+    const type = this.answers.type.toLowerCase();
     this.fs.copyTpl(
-      this.templatePath('./component.tsx.ejs'),
+      this.templatePath(`./component.${type}.tsx.ejs`),
       this.destinationPath(`${process.cwd()}/${name}.tsx`),
       { myComp: name },
     );

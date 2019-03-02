@@ -1,0 +1,23 @@
+import {
+    mapDispatchToProps,
+    mapStateToProps,
+} from '../<%=myCont%>';
+
+describe('<%=myCont%>', () => {
+    it('maps correct props from state', () => {
+        const state = {
+            stateProp: 'test',
+            someOtherProp: 'someOtherProp',
+        };
+        const expected = { stateProp: state.stateProp };
+
+        expect(mapStateToProps(state)).toEqual(expected);
+    });
+
+    it('maps correct actions with dispatch', () => {
+        const dispatch = jest.fn();
+        mapDispatchToProps(dispatch).someAction();
+
+        expect(dispatch).toHaveBeenCalledTimes(1);
+    });
+});

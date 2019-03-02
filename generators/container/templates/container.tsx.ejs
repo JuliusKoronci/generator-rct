@@ -1,0 +1,22 @@
+import * as React from 'react';
+import { bindActionCreators, Dispatch } from 'redux';
+import { connect } from 'react-redux';
+
+const someAction = () => ({ type: 'REMOVE_THIS' });
+
+interface AppState {
+    stateProp: any;
+}
+
+// tslint:disable-next-line:variable-name
+const MyComp = () => (<div>Replace with an actual component</div>);
+
+export const mapStateToProps = (state: AppState) => ({
+    stateProp: state.stateProp, // replace with an actual selectors
+});
+
+export const mapDispatchToProps = (dispatch: Dispatch) =>
+    bindActionCreators({ someAction }, dispatch);
+
+// tslint:disable-next-line:variable-name
+export const <%=myCont%> = connect(mapStateToProps, mapDispatchToProps)(MyComp);
