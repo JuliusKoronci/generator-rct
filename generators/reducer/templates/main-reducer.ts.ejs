@@ -1,0 +1,31 @@
+import { AnyAction } from 'redux';
+
+/** To remove */
+export const CONSTANTS = { SOME_CONST: 'SOME_CONST' };
+
+interface State {
+    someProp: string;
+}
+
+export const someReducer = (state: State) => state;
+/** End of to remove */
+
+type Reducer = (state: State, action: AnyAction) => State;
+type ReducerMap = { [key: string]: Reducer };
+
+export const initialState: State = {
+    someProp: 'text',
+};
+
+export const reducers: ReducerMap = {
+    [CONSTANTS.SOME_CONST]: someReducer,
+};
+
+export const <%= myRed %> =
+    (state: State = initialState, action: AnyAction) => {
+        if (reducers[action.type]) {
+            const reducer: Reducer = reducers[action.type];
+            return reducer(state, action);
+        }
+        return state;
+    };

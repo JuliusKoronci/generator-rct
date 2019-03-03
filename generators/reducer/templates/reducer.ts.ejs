@@ -1,0 +1,10 @@
+import { AnyAction } from 'redux';
+
+export interface State {
+    myProp: string;
+}
+
+export const <%= myRed %> = (state: State, action: AnyAction): State => ({
+    ...state,
+    myProp: action.payload,
+});

@@ -1,0 +1,15 @@
+import { <%= myRed %>, State } from '../<%= myRed %>';
+
+describe('<%= myRed %>', () => {
+    const mockState: State = {
+        myProp: 'test',
+    };
+
+    it('returns updated state', () => {
+        const action = { type: 'CORRECT_TYPE', payload: 'newProp' };
+
+        expect(<%= myRed %>(mockState, action)).toEqual({
+            myProp: action.payload,
+        });
+    });
+});

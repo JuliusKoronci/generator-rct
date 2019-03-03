@@ -8,7 +8,7 @@ module.exports = class extends Generator {
       {
         type: 'input',
         name: 'name',
-        message: 'Function name',
+        message: 'Selector name',
         default: this.appname,
       },
     ]);

@@ -1,0 +1,46 @@
+import {
+    reducers,
+    initialState,
+    CONSTANTS,
+    <%= myRed %>,
+} from '../<%= myRed %>';
+import { someReducer } from '../someReducer';
+
+jest.mock('../someReducer', () => ({
+    someReducer: jest.fn(),
+}));
+
+describe('initialState', () => {
+    it('does not change', () => {
+        expect(initialState).toMatchSnapshot();
+    });
+});
+
+describe('reducers', () => {
+    it('handles all api state constants', () => {
+        expect(Object.keys(reducers)).toEqual(Object.values(CONSTANTS));
+    });
+});
+
+describe('<%= myRed %>', () => {
+    it('returns initial state if no matching action', () => {
+        const newState = <%= myRed %>(initialState, { type: 'SOME FAKE ACTION' });
+
+        expect(newState)
+            .toEqual(initialState);
+    });
+
+    it('returns initial state if no state provided', () => {
+        const newState = <%= myRed %>(undefined, { type: 'SOME FAKE ACTION' });
+
+        expect(newState)
+            .toEqual(initialState);
+    });
+
+    it('calls someReducer with state and action if action type matches', () => {
+        const action = { type: CONSTANTS.SOME_CONST };
+        <%= myRed %>(initialState, action);
+
+        expect(someReducer).toHaveBeenCalledWith(initialState, action);
+    });
+});
