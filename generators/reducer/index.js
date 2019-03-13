@@ -4,7 +4,6 @@ const { fnName } = require('../../utils/string');
 const choices = [
   'Main Reducer',
   'Reducer function',
-  'API Scaffold',
 ];
 
 module.exports = class extends Generator {
@@ -38,6 +37,7 @@ module.exports = class extends Generator {
         break;
       }
       case choices[2]: {
+        this._apiReducer(name);
         break;
       }
       default:

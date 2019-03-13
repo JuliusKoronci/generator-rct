@@ -1,0 +1,12 @@
+import { SagaIterator } from 'redux-saga';
+import { <%= type %> } from 'redux-saga/effects';
+
+const ACTION_TYPE = 'ACTION_TYPE';
+
+export function* <%= myName %>() {
+
+}
+
+export function* <%= myName %>Saga(): SagaIterator {
+    yield <%= type %>(ACTION_TYPE, <%= myName %>);
+}

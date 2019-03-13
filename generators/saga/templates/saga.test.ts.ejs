@@ -1,0 +1,16 @@
+import { <%= type %> } from "redux-saga/effects";
+import { <%= myName %>Saga, <%= myName %>, ACTION_TYPE } from "../<%= myName %>Saga";
+
+describe("<%= myName %>Saga", () => {
+    it("calls <%= myName %>", () => {
+        const generator = <%= myName %>Saga();
+
+        expect(generator.next().value)
+            .toEqual(<%= type %>(ACTION_TYPE, <%= myName %>));
+    });
+});
+describe("<%= myName %>", () => {
+    it("does something", () => {
+        const generator = <%= myName %>();
+    });
+});
