@@ -56,5 +56,5 @@ redux action file, we expect to have a createAction within the system either fro
 ### Sagas
 redux saga pattern with option to listen for takeEvery or takAll and an example test
 
-### Function
+### Functions
 If you follow the single file function pattern us this generater to avoid those 20 seconds of typing :)
