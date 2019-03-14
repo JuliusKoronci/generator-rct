@@ -11,10 +11,8 @@ module.exports = class extends Generator {
         name: 'action',
         message: 'What do you want to do?',
         choices: [
-          'feature',
           'component',
           'container',
-          'domain',
           'reducer',
           'selector',
           'action',

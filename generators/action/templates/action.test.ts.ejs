@@ -1,0 +1,13 @@
+import { <%= myAction %> } from '../<%= myAction %>';
+
+describe('errorAction', () => {
+    const payload = 'Some error';
+    const action = <%= myAction %>(payload);
+
+    it('has correct action type', () => {
+        expect(action.type).toEqual(<%= myConst %>);
+    });
+    it('has correct payload', () => {
+        expect(action.payload).toEqual(payload);
+    });
+});
