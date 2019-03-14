@@ -1,4 +1,4 @@
-# generator-rct [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-rct
 > Scaffold React applications and its parts
 
 ## Installation
