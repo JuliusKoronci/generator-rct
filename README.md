@@ -18,21 +18,43 @@ yo rct
 
 ## Getting To Know Yeoman
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+The generator generates TypeScript files with coresponding tests for following patterns:
 
-## License
+### Componenets
+React components
+	- Class Component
+	- SFC Component
+	- PureComponent
 
-MIT © [Julius Koronci]()
+### Containers
+Smart React componet, uses connect and bindActionCreators
 
+### Reducers
+Redux reducers
+	- main reducer uses the object mapping pattern instead of a switch
+	- reducer function is meant to be connected to the main reducer
+	
+	```
+	export const reducers: ReducerMap<State> = {
+        [API_CONSTANTS.REPLACE]: replaceReducer,
+        [API_CONSTANTS.UPDATE]: updateReducer,
+        [API_CONSTANTS.DELETE]: deleteReducer,
+        [API_CONSTANTS.ERROR]: errorReducer,
+        [API_CONSTANTS.REQUEST]: requestReducer,
+    };
+    
+    export const labelManagementReducer =
+        (state: State = initialState, action: StandardAction<any>) =>
+            getReducer<State>(reducers[action.type])(state, action);
+	```
+### Selectors
+it creates a reselect selector file.	
 
-[npm-image]: https://badge.fury.io/js/generator-rct.svg
-[npm-url]: https://npmjs.org/package/generator-rct
-[travis-image]: https://travis-ci.org/JuliusKoronci/generator-rct.svg?branch=master
-[travis-url]: https://travis-ci.org/JuliusKoronci/generator-rct
-[daviddm-image]: https://david-dm.org/JuliusKoronci/generator-rct.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/JuliusKoronci/generator-rct
-[coveralls-image]: https://coveralls.io/repos/JuliusKoronci/generator-rct/badge.svg
-[coveralls-url]: https://coveralls.io/r/JuliusKoronci/generator-rct
+### Actions
+redux action file, we expect to have a createAction within the system either from the redux-actions package or a custom implementation
+
+### Sagas
+redux saga pattern with option to listen for takeEvery or takAll and an example test
+
+### Function
+If you follow the single file function pattern us this generater to avoid those 20 seconds of typing :)
