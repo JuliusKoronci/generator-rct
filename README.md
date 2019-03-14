@@ -27,7 +27,7 @@ React components
 	- PureComponent
 
 ### Containers
-Smart React componet, uses connect and bindActionCreators
+Smart React components, uses connect and bindActionCreators
 
 ### Reducers
 Redux reducers
