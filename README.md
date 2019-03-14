@@ -16,7 +16,7 @@ Then generate your new project:
 yo rct
 ```
 
-## Getting To Know Yeoman
+## Getting To Know The Yeoman Generator
 
 The generator generates TypeScript files with coresponding tests for following patterns:
 
