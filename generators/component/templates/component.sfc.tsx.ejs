@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 
 interface <%= myComp %>Props {
     myProp: any;
 }
 
 // tslint:disable-next-line:variable-name
-export const <%= myComp %>: React.SFC<<%= myComp %>Props> = ({ myProp }) => (
+export const <%= myComp %>: FunctionComponent<<%= myComp %>Props> = ({ myProp }) => (
     <div>{myProp}</div>
 );
